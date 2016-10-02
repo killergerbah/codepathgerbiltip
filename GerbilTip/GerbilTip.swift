@@ -11,7 +11,7 @@ import Foundation
 class GerbilTip {
     
     let tipPercentages = [0.15, 0.20, 0.25]
-    let settings = Settings()
+    let settings = Settings.instance
     
     private let state = State.instance
     
@@ -46,12 +46,16 @@ class GerbilTip {
         return settings.defaultTipPercentageIndex
     }
     
+    func onExit() {
+        state.save()
+    }
+    
     private class State {
         static let instance = State()
         static let userDefaults = NSUserDefaults.standardUserDefaults()
         static let billExpiration = 600.0
         
-        var billInternal: Double;
+        private var billInternal: Double;
         
         var bill: Double {
             get {
@@ -67,6 +71,14 @@ class GerbilTip {
         
         init() {
             billInternal = State.defaultBill()
+        }
+        
+        func save() {
+            State.saveInternal()
+        }
+        
+        private class func saveInternal() {
+            userDefaults.synchronize()
         }
         
         private class func saveDefaultBill(bill: Double) {

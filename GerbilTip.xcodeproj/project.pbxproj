@@ -17,6 +17,9 @@
 		561B8D7A1D9A2B88007CEBF6 /* GerbilTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */; };
 		561B8D7C1DA0BA2E007CEBF6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D7B1DA0BA2E007CEBF6 /* SettingsViewController.swift */; };
 		561B8D7E1DA0C189007CEBF6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D7D1DA0C189007CEBF6 /* Settings.swift */; };
+		561B8D801DA117B3007CEBF6 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D7F1DA117B3007CEBF6 /* ColorScheme.swift */; };
+		561B8D821DA126A7007CEBF6 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D811DA126A7007CEBF6 /* Colorable.swift */; };
+		561B8D841DA126FA007CEBF6 /* GerbilTipUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D831DA126FA007CEBF6 /* GerbilTipUIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerbilTip.swift; sourceTree = "<group>"; };
 		561B8D7B1DA0BA2E007CEBF6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		561B8D7D1DA0C189007CEBF6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		561B8D7F1DA117B3007CEBF6 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		561B8D811DA126A7007CEBF6 /* Colorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colorable.swift; sourceTree = "<group>"; };
+		561B8D831DA126FA007CEBF6 /* GerbilTipUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerbilTipUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				561B8D571D9A128A007CEBF6 /* Info.plist */,
 				561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */,
 				561B8D7D1DA0C189007CEBF6 /* Settings.swift */,
+				561B8D7F1DA117B3007CEBF6 /* ColorScheme.swift */,
+				561B8D811DA126A7007CEBF6 /* Colorable.swift */,
+				561B8D831DA126FA007CEBF6 /* GerbilTipUIViewController.swift */,
 			);
 			path = GerbilTip;
 			sourceTree = "<group>";
@@ -266,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				561B8D7E1DA0C189007CEBF6 /* Settings.swift in Sources */,
+				561B8D821DA126A7007CEBF6 /* Colorable.swift in Sources */,
+				561B8D841DA126FA007CEBF6 /* GerbilTipUIViewController.swift in Sources */,
+				561B8D801DA117B3007CEBF6 /* ColorScheme.swift in Sources */,
 				561B8D7A1D9A2B88007CEBF6 /* GerbilTip.swift in Sources */,
 				561B8D4E1D9A128A007CEBF6 /* ViewController.swift in Sources */,
 				561B8D4C1D9A128A007CEBF6 /* AppDelegate.swift in Sources */,

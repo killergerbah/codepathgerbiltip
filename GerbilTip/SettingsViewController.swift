@@ -8,13 +8,18 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    let gerbilTip = GerbilTip()
-    var defaultTipPercentages = [String]()
+class SettingsViewController: GerbilTipUIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var defaultTipButton: UIButton!
     @IBOutlet weak var defaultTipPicker: UIPickerView!
-
+    @IBOutlet weak var colorSchemeLightButton: UIButton!
+    @IBOutlet weak var colorSchemeDarkButton: UIButton!
+    @IBOutlet weak var colorSchemeSideLabel: UILabel!
+    @IBOutlet weak var defaultTipSideLabel: UILabel!
+    
+    private let gerbilTip = GerbilTip()
+    private var defaultTipPercentages = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for tipPercentage in gerbilTip.tipPercentages {
@@ -27,7 +32,23 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         defaultTipPicker.selectRow(gerbilTip.settings.defaultTipPercentageIndex, inComponent: 0, animated: false)
         
+        updateColorSchemeButton()
         updateDefaultTipButton()
+    }
+    
+    override func applyColorScheme(colorScheme: ColorScheme) {
+        let textColor = colorScheme.textColor
+        
+        defaultTipSideLabel.textColor = textColor
+        colorSchemeSideLabel.textColor = textColor
+        
+        view.backgroundColor = colorScheme.bgColor
+        defaultTipPicker.reloadAllComponents()
+        
+        let buttonColor = colorScheme.buttonColor
+        defaultTipButton.tintColor = buttonColor
+        colorSchemeLightButton.tintColor = buttonColor
+        colorSchemeDarkButton.tintColor = buttonColor
     }
     
     private func percentage(percent: Double) -> String {
@@ -42,6 +63,34 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         defaultTipPicker.hidden = false
     }
 
+    @IBAction func onColorSchemeLightTouchUpInside(sender: AnyObject) {
+        pickLightColorScheme()
+    }
+    
+    @IBAction func onColorSchemeDarkTouchUpInside(sender: AnyObject) {
+        pickDarkColorScheme()
+    }
+    
+    private func pickLightColorScheme() {
+        pickColorScheme(ColorScheme.light, enabledButton: colorSchemeLightButton, disabledButton: colorSchemeDarkButton)
+    }
+    
+    private func pickDarkColorScheme() {
+        pickColorScheme(ColorScheme.dark, enabledButton: colorSchemeDarkButton, disabledButton: colorSchemeLightButton)
+    }
+    
+    private func pickColorScheme(picked: ColorScheme, enabledButton: UIButton, disabledButton: UIButton) {
+        gerbilTip.settings.colorScheme = picked
+        toggle(enabledButton, disabled: disabledButton)
+        applyColorScheme(picked)
+    }
+
+    
+    private func toggle(enabled: UIButton, disabled: UIButton) {
+        enabled.alpha = 1.0
+        disabled.alpha = 0.5
+    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -62,6 +111,18 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         gerbilTip.settings.defaultTipPercentageIndex = row
         updateDefaultTipButton()
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: defaultTipPercentages[row], attributes: [NSForegroundColorAttributeName: gerbilTip.settings.colorScheme.textColor])
+    }
+    
+    private func updateColorSchemeButton() {
+        if gerbilTip.settings.colorScheme.id == ColorScheme.dark.id {
+            pickDarkColorScheme()
+        } else {
+            pickLightColorScheme()
+        }
     }
     
     private func updateDefaultTipButton() {

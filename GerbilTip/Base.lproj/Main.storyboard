@@ -43,6 +43,11 @@
                                     <action selector="onBillEditingEnded:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="i0s-UU-SHc"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-hV-nnU" userLabel="BillLabel">
+                                <rect key="frame" x="15" y="72" width="29" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-GR-APs">
                                 <rect key="frame" x="15" y="104" width="30" height="25"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
@@ -59,31 +64,41 @@
                                 <rect key="frame" x="15" y="140" width="292" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaP-dH-5Fe" userLabel="Tip">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaP-dH-5Fe" userLabel="Tip">
                                 <rect key="frame" x="52" y="104" width="255" height="25"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-hV-nnU" userLabel="BillLabel">
-                                <rect key="frame" x="15" y="72" width="29" height="25"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nc3-dN-2mN">
+                                <rect key="frame" x="13" y="249" width="302" height="2"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fd8-6v-wCA">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="2"/>
+                                        <color key="progressTintColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="trackTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Zqo-Nr-sWh" secondAttribute="trailing" constant="-7" id="5tU-wh-9Es"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fd8-6v-wCA" secondAttribute="trailing" constant="-7" id="6qm-hO-HsP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sT9-qv-R74" secondAttribute="trailing" constant="-7" id="7gb-7k-Vto"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o4q-m2-WkH" secondAttribute="trailing" constant="-7" id="Bsn-Iw-tjE"/>
+                            <constraint firstItem="o4q-m2-WkH" firstAttribute="leading" secondItem="cZG-hV-nnU" secondAttribute="trailing" constant="8" id="C29-ds-OSt"/>
                             <constraint firstItem="sT9-qv-R74" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="Dca-Qb-HUF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KaP-dH-5Fe" secondAttribute="trailing" constant="-7" id="IzB-w8-5Hz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vb3-B8-HQa" secondAttribute="trailing" constant="-9" id="Ob1-la-bo0"/>
                             <constraint firstItem="cZG-hV-nnU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="Puo-GC-jER"/>
                             <constraint firstItem="Zqo-Nr-sWh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="WxM-d3-Mtn"/>
+                            <constraint firstItem="Vb3-B8-HQa" firstAttribute="leading" secondItem="Tzb-eO-q7T" secondAttribute="trailing" constant="8" id="aNu-Bx-7dM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vb3-B8-HQa" secondAttribute="trailing" constant="-9" id="ch1-NL-Rkd"/>
+                            <constraint firstItem="Fd8-6v-wCA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="jQf-3I-RPU"/>
                             <constraint firstItem="Tzb-eO-q7T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="lgB-Ux-caX"/>
                             <constraint firstItem="jaQ-GR-APs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="pAT-kK-mYC"/>
+                            <constraint firstItem="KaP-dH-5Fe" firstAttribute="leading" secondItem="jaQ-GR-APs" secondAttribute="trailing" constant="7" id="r8r-ha-iLp"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="oXh-Qh-UM7" appends="YES" id="bLp-ok-3xl"/>
@@ -97,10 +112,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="billLabel" destination="cZG-hV-nnU" id="jkq-VE-qOy"/>
                         <outlet property="billTextField" destination="o4q-m2-WkH" id="9dE-ki-R59"/>
-                        <outlet property="tipLabel" destination="KaP-dH-5Fe" id="MNp-se-sTO"/>
+                        <outlet property="separatorView" destination="Zqo-Nr-sWh" id="agY-Z2-aKD"/>
+                        <outlet property="tipDisplayBar" destination="Fd8-6v-wCA" id="MYg-qE-nvW"/>
+                        <outlet property="tipLabel" destination="KaP-dH-5Fe" id="3nh-Br-8Oe"/>
                         <outlet property="tipSegmentedControl" destination="sT9-qv-R74" id="HDW-iN-2H1"/>
-                        <outlet property="totalLabel" destination="Vb3-B8-HQa" id="hJo-4X-rE5"/>
+                        <outlet property="tipSideLabel" destination="jaQ-GR-APs" id="gtF-zP-hXh"/>
+                        <outlet property="totalLabel" destination="Vb3-B8-HQa" id="mM0-Kt-Q8w"/>
+                        <outlet property="totalSideLabel" destination="Tzb-eO-q7T" id="tGd-LG-ZdX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,15 +157,41 @@
                                     <action selector="onDefaultTipTouchUpInside:" destination="o3a-bU-h60" eventType="touchUpInside" id="7cE-QJ-9kD"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQU-yX-vSq">
-                                <rect key="frame" x="57" y="105" width="206" height="171"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7I-cx-NrH">
+                                <rect key="frame" x="210" y="93" width="47" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="Light"/>
+                                <connections>
+                                    <action selector="onColorSchemeLightTouchUpInside:" destination="o3a-bU-h60" eventType="touchUpInside" id="mkd-BM-hlo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yM-zF-l0Y">
+                                <rect key="frame" x="265" y="93" width="45" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="Dark"/>
+                                <connections>
+                                    <action selector="onColorSchemeDarkTouchUpInside:" destination="o3a-bU-h60" eventType="touchUpInside" id="kEp-OF-yjf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Color Scheme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCd-rI-DU0" userLabel="BillLabel">
+                                <rect key="frame" x="8" y="99" width="134" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQU-yX-vSq">
+                                <rect key="frame" x="112" y="207" width="96" height="122"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="IQU-yX-vSq" firstAttribute="centerY" secondItem="Y7s-wG-3f3" secondAttribute="centerY" id="6xa-kA-ec2"/>
                             <constraint firstItem="RTY-kR-AC2" firstAttribute="leading" secondItem="Y7s-wG-3f3" secondAttribute="leadingMargin" constant="-5" id="UMX-sb-ARH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2pe-wx-3do" secondAttribute="trailing" constant="-5" id="Xer-bu-TFT"/>
+                            <constraint firstItem="9yM-zF-l0Y" firstAttribute="leading" secondItem="V7I-cx-NrH" secondAttribute="trailing" constant="8" id="Y8q-jv-Bg7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9yM-zF-l0Y" secondAttribute="trailing" constant="-5" id="esD-c8-Hf6"/>
+                            <constraint firstItem="IQU-yX-vSq" firstAttribute="centerX" secondItem="Y7s-wG-3f3" secondAttribute="centerX" id="mGK-8P-LST"/>
+                            <constraint firstItem="uCd-rI-DU0" firstAttribute="leading" secondItem="Y7s-wG-3f3" secondAttribute="leadingMargin" constant="-5" id="pnM-67-kB6"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="KyM-hy-aoV" appends="YES" id="1CM-gi-77Y"/>
@@ -153,8 +199,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qb9-Nu-IWA"/>
                     <connections>
+                        <outlet property="colorSchemeDarkButton" destination="9yM-zF-l0Y" id="cNo-Nz-rVz"/>
+                        <outlet property="colorSchemeLightButton" destination="V7I-cx-NrH" id="0bW-Ht-X4n"/>
+                        <outlet property="colorSchemeSideLabel" destination="uCd-rI-DU0" id="cjF-B9-mdS"/>
                         <outlet property="defaultTipButton" destination="2pe-wx-3do" id="4r0-XR-73F"/>
                         <outlet property="defaultTipPicker" destination="IQU-yX-vSq" id="Pg1-Qj-Lc4"/>
+                        <outlet property="defaultTipSideLabel" destination="RTY-kR-AC2" id="DMi-WX-oOM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrA-3L-qbo" userLabel="First Responder" sceneMemberID="firstResponder"/>

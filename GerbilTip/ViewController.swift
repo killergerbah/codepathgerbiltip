@@ -8,15 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    let gerbilTip = GerbilTip()
+class ViewController: GerbilTipUIViewController {
     
     @IBOutlet weak var billTextField: UITextField!
-    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var billLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var tipSideLabel: UILabel!
+    @IBOutlet weak var totalSideLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var tipDisplayBar: UIProgressView!
     
+    private let gerbilTip = GerbilTip()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         var i = 0
@@ -31,6 +36,22 @@ class ViewController: UIViewController {
         }
     }
     
+    override func applyColorScheme(colorScheme: ColorScheme) {
+        let textColor = colorScheme.textColor
+        
+        billTextField.textColor = textColor
+        totalLabel.textColor = textColor
+        tipLabel.textColor = textColor
+        tipSideLabel.textColor = textColor
+        billLabel.textColor = textColor
+        totalSideLabel.textColor = textColor
+        
+        separatorView.backgroundColor = textColor
+        self.view.backgroundColor = gerbilTip.settings.colorScheme.bgColor
+        
+        tipSegmentedControl.tintColor = gerbilTip.settings.colorScheme.buttonColor
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if (gerbilTip.selectedTipPercentageIndex < tipSegmentedControl.numberOfSegments) {
@@ -42,6 +63,11 @@ class ViewController: UIViewController {
         billTextField.clearsOnInsertion = true
         billTextField.becomeFirstResponder()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        gerbilTip.onExit()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,7 +75,6 @@ class ViewController: UIViewController {
     
     @IBAction func onBillEditingChanged(sender: AnyObject) {
         guard let bill = Double(billTextField.text!) else {
-            print(billTextField.text)
             onBillChanged(0.0)
             return
         }
@@ -63,7 +88,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTipSelectedChanged(sender: AnyObject) {
-        gerbilTip.tipPercentage = tipPercentage()
+        let percent = tipPercentage()
+        gerbilTip.tipPercentage = percent
         updateTip()
     }
 
@@ -95,6 +121,8 @@ class ViewController: UIViewController {
     private func updateTip() {
         totalLabel.text = localizeCurrency(gerbilTip.total)
         tipLabel.text = "+" + localizeCurrency(gerbilTip.tip)
+        
+        self.tipDisplayBar.setProgress(Float(1.0 / (1.0 + gerbilTip.tipPercentage)), animated: true)
     }
     
     private func localizeCurrency(amount:Double) -> String {
