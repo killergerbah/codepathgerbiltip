@@ -1,25 +1,188 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZZo-Or-aq3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gerbil Tip-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GerbilTip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sT9-qv-R74" userLabel="Tip selector">
+                                <rect key="frame" x="13" y="206" width="294" height="29"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onTipSelectedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ug0-jJ-pOB"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="100" verticalHuggingPriority="100" ambiguous="YES" misplaced="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.01" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-B8-HQa" userLabel="TotalField">
+                                <rect key="frame" x="89" y="154" width="220" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="32"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="o4q-m2-WkH" userLabel="BillField">
+                                <rect key="frame" x="52" y="72" width="255" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onBillEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="bGb-ap-L2P"/>
+                                    <action selector="onBillEditingEnded:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="i0s-UU-SHc"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-GR-APs">
+                                <rect key="frame" x="15" y="104" width="30" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzb-eO-q7T">
+                                <rect key="frame" x="15" y="154" width="66" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-Nr-sWh">
+                                <rect key="frame" x="15" y="140" width="292" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaP-dH-5Fe" userLabel="Tip">
+                                <rect key="frame" x="52" y="104" width="255" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bill" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZG-hV-nnU" userLabel="BillLabel">
+                                <rect key="frame" x="15" y="72" width="29" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zqo-Nr-sWh" secondAttribute="trailing" constant="-7" id="5tU-wh-9Es"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sT9-qv-R74" secondAttribute="trailing" constant="-7" id="7gb-7k-Vto"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o4q-m2-WkH" secondAttribute="trailing" constant="-7" id="Bsn-Iw-tjE"/>
+                            <constraint firstItem="sT9-qv-R74" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="Dca-Qb-HUF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KaP-dH-5Fe" secondAttribute="trailing" constant="-7" id="IzB-w8-5Hz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vb3-B8-HQa" secondAttribute="trailing" constant="-9" id="Ob1-la-bo0"/>
+                            <constraint firstItem="cZG-hV-nnU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="Puo-GC-jER"/>
+                            <constraint firstItem="Zqo-Nr-sWh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="WxM-d3-Mtn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vb3-B8-HQa" secondAttribute="trailing" constant="-9" id="ch1-NL-Rkd"/>
+                            <constraint firstItem="Tzb-eO-q7T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="lgB-Ux-caX"/>
+                            <constraint firstItem="jaQ-GR-APs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="pAT-kK-mYC"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oXh-Qh-UM7" appends="YES" id="bLp-ok-3xl"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Gerbil Tip" id="az2-wz-9jL">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="w7E-Dq-bZA">
+                            <connections>
+                                <segue destination="o3a-bU-h60" kind="push" id="YvE-JM-bp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="billTextField" destination="o4q-m2-WkH" id="9dE-ki-R59"/>
+                        <outlet property="tipLabel" destination="KaP-dH-5Fe" id="MNp-se-sTO"/>
+                        <outlet property="tipSegmentedControl" destination="sT9-qv-R74" id="HDW-iN-2H1"/>
+                        <outlet property="totalLabel" destination="Vb3-B8-HQa" id="hJo-4X-rE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oXh-Qh-UM7">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="Ay5-w3-vQs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="766" y="336"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="OFk-KG-ask">
+            <objects>
+                <viewController id="o3a-bU-h60" customClass="SettingsViewController" customModule="GerbilTip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2c8-Oz-YSN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pfn-nA-99Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y7s-wG-3f3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Default Tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTY-kR-AC2" userLabel="BillLabel">
+                                <rect key="frame" x="8" y="72" width="102" height="25"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-wx-3do">
+                                <rect key="frame" x="265" y="66" width="43" height="37"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="15%"/>
+                                <connections>
+                                    <action selector="onDefaultTipTouchUpInside:" destination="o3a-bU-h60" eventType="touchUpInside" id="7cE-QJ-9kD"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQU-yX-vSq">
+                                <rect key="frame" x="57" y="105" width="206" height="171"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="RTY-kR-AC2" firstAttribute="leading" secondItem="Y7s-wG-3f3" secondAttribute="leadingMargin" constant="-5" id="UMX-sb-ARH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2pe-wx-3do" secondAttribute="trailing" constant="-5" id="Xer-bu-TFT"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KyM-hy-aoV" appends="YES" id="1CM-gi-77Y"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qb9-Nu-IWA"/>
+                    <connections>
+                        <outlet property="defaultTipButton" destination="2pe-wx-3do" id="4r0-XR-73F"/>
+                        <outlet property="defaultTipPicker" destination="IQU-yX-vSq" id="Pg1-Qj-Lc4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CrA-3L-qbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KyM-hy-aoV">
+                    <connections>
+                        <action selector="onTap:" destination="o3a-bU-h60" id="E7k-AY-cMu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1105" y="336"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tSG-Jj-6ge">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZZo-Or-aq3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mSd-yO-bdj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AqZ-yh-7Ee"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4im-w4-MyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="336"/>
         </scene>
     </scenes>
 </document>

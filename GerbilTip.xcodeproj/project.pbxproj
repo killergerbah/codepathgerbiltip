@@ -14,6 +14,9 @@
 		561B8D561D9A128A007CEBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561B8D541D9A128A007CEBF6 /* LaunchScreen.storyboard */; };
 		561B8D611D9A128A007CEBF6 /* GerbilTipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D601D9A128A007CEBF6 /* GerbilTipTests.swift */; };
 		561B8D6C1D9A128A007CEBF6 /* GerbilTipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D6B1D9A128A007CEBF6 /* GerbilTipUITests.swift */; };
+		561B8D7A1D9A2B88007CEBF6 /* GerbilTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */; };
+		561B8D7C1DA0BA2E007CEBF6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D7B1DA0BA2E007CEBF6 /* SettingsViewController.swift */; };
+		561B8D7E1DA0C189007CEBF6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561B8D7D1DA0C189007CEBF6 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		561B8D671D9A128A007CEBF6 /* GerbilTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GerbilTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		561B8D6B1D9A128A007CEBF6 /* GerbilTipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerbilTipUITests.swift; sourceTree = "<group>"; };
 		561B8D6D1D9A128A007CEBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerbilTip.swift; sourceTree = "<group>"; };
+		561B8D7B1DA0BA2E007CEBF6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		561B8D7D1DA0C189007CEBF6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +106,12 @@
 				561B8D4B1D9A128A007CEBF6 /* AppDelegate.swift */,
 				561B8D4D1D9A128A007CEBF6 /* ViewController.swift */,
 				561B8D4F1D9A128A007CEBF6 /* Main.storyboard */,
+				561B8D7B1DA0BA2E007CEBF6 /* SettingsViewController.swift */,
 				561B8D521D9A128A007CEBF6 /* Assets.xcassets */,
 				561B8D541D9A128A007CEBF6 /* LaunchScreen.storyboard */,
 				561B8D571D9A128A007CEBF6 /* Info.plist */,
+				561B8D791D9A2B88007CEBF6 /* GerbilTip.swift */,
+				561B8D7D1DA0C189007CEBF6 /* Settings.swift */,
 			);
 			path = GerbilTip;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				561B8D7E1DA0C189007CEBF6 /* Settings.swift in Sources */,
+				561B8D7A1D9A2B88007CEBF6 /* GerbilTip.swift in Sources */,
 				561B8D4E1D9A128A007CEBF6 /* ViewController.swift in Sources */,
 				561B8D4C1D9A128A007CEBF6 /* AppDelegate.swift in Sources */,
+				561B8D7C1DA0BA2E007CEBF6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
