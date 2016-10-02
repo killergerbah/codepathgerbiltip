@@ -30,8 +30,6 @@ class ViewController: UIViewController {
             i += 1
         }
         
-        gerbilTip.tipPercentage = tipPercentage()
-        updateAll()
         billTextField.becomeFirstResponder()
     }
     
@@ -41,6 +39,9 @@ class ViewController: UIViewController {
             tipSegmentedControl.selectedSegmentIndex = gerbilTip.selectedTipPercentageIndex
         }
         
+        gerbilTip.tipPercentage = tipPercentage()
+        updateAll()
+        billTextField.clearsOnInsertion = true
     }
 
     override func didReceiveMemoryWarning() {

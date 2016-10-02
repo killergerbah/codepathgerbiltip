@@ -48,10 +48,41 @@ class GerbilTip {
     
     private class State {
         static let instance = State()
+        static let userDefaults = NSUserDefaults.standardUserDefaults()
+        static let billExpiration = 600.0
         
-        var bill = 0.0
+        var billInternal: Double;
+        
+        var bill: Double {
+            get {
+                return billInternal
+            }
+            set {
+                billInternal = newValue
+                State.saveDefaultBill(newValue)
+            }
+        }
         
         var tipPercentage = 0.0
+        
+        init() {
+            billInternal = State.defaultBill()
+        }
+        
+        private class func saveDefaultBill(bill: Double) {
+            userDefaults.setDouble(bill, forKey: "bill")
+            userDefaults.setDouble(NSDate().timeIntervalSince1970, forKey: "billTimestamp")
+        }
+        
+        private class func defaultBill() -> Double {
+            let created = userDefaults.doubleForKey("billTimestamp")
+            let now = NSDate().timeIntervalSince1970
+            if (now - created < billExpiration) {
+                return userDefaults.doubleForKey("bill")
+            }
+            
+            return 0.0
+        }
  
     }
 }

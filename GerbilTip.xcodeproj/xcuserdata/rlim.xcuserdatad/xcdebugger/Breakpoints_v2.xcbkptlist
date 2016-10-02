@@ -19,5 +19,68 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GerbilTip/GerbilTip.swift"
+            timestampString = "497079004.594971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "State"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GerbilTip.GerbilTip.(State in _C370931DF0418365036DC67007CF2C7B).init () -&gt; GerbilTip.GerbilTip.(State in _C370931DF0418365036DC67007CF2C7B)"
+                  moduleName = "GerbilTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlim/Desktop/GerbilTip/GerbilTip/GerbilTip.swift"
+                  timestampString = "497079006.008803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "13">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GerbilTip.GerbilTip.(State in _C370931DF0418365036DC67007CF2C7B).bill.getter : Swift.Double"
+                  moduleName = "GerbilTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlim/Desktop/GerbilTip/GerbilTip/GerbilTip.swift"
+                  timestampString = "497079006.008972"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GerbilTip.GerbilTip.(State in _C370931DF0418365036DC67007CF2C7B).bill.setter : Swift.Double"
+                  moduleName = "GerbilTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rlim/Desktop/GerbilTip/GerbilTip/GerbilTip.swift"
+                  timestampString = "497079006.009065"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
